@@ -2,20 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './table.css';
 import ping from 'ping';
-import {pingstat} from './pingstat.js'
+//import {test} from './newping.js'
+import axios from 'axios'
 //import pings from './pingstat'
+import myJson from '../src/serverstatus.json';
+
 
 
 export default class Table extends React.Component {
     
     constructor(props) {
        super(props)
+       
        this.state = { 
           servers: [
-             { No: 1, ERP: 'TopShelf', Hostname: 'LX150TS01', Region: 'Central Seafood',Status: ''} ,
-             { No: 2, ERP: 'Topshelf', Hostname: 'LX289TS01', Region: 'Incredible',Status:''},
-             { No: 3, ERP: 'Topshelf', Hostname: 'LX315TS01', Region: 'North Carolina',Status: ''},
-             { No: 5, ERP: 'Topshelf', Hostname: 'LX450TS01', Region: 'South Carolina',Status: ''}
+             { No: 1, ERP: 'TopShelf', Hostname: myJson['Topshelf'][0].name, Region: myJson['Topshelf'][0].region,Status: myJson['Topshelf'][0].status},
+             { No: 2, ERP: 'Topshelf', Hostname: myJson['Topshelf'][1].name, Region: myJson['Topshelf'][1].region,Status: myJson['Topshelf'][1].status},
+             { No: 3, ERP: 'Topshelf', Hostname: myJson['Topshelf'][2].name, Region: myJson['Topshelf'][2].region,Status: myJson['Topshelf'][2].status},
+             { No: 4, ERP: 'Topshelf', Hostname: myJson['Topshelf'][3].name, Region: myJson['Topshelf'][3].region,Status: myJson['Topshelf'][3].status}
           ],
           
        }
@@ -44,22 +48,12 @@ export default class Table extends React.Component {
        })
     }
 
+    refreshPage() {
+        window.location.reload(false);
+      }
+
 
     pingstatus(){
-            /* var ans
-            ans = ping.sys.probe('10.132.41.27', function(isAlive){
-                var msg
-                //if(isAlive){
-                  //  msg =  'UP'
-                //}
-                //else{
-                  //  msg =  'DOWN'
-                //}
-                console.log(isAlive)
-               return msg
-            })
-            console.log('result is: '+ans)
-            return ans */
             var hosts = ['192.168.1.1', 'google.com', 'yahoo.com'];
             hosts.forEach(function(host){
                 ping.sys.probe(host, function(isAlive){
@@ -70,14 +64,24 @@ export default class Table extends React.Component {
             });
             
     }
+
+    getCustomerData() {
+        axios.get('/src/serverstatus.json').then(response => {
+          //this.setState({customerList: response})
+          console.log(response.data)
+          return response
+        })
+        
+      };
     
-    
+   
+
  
     render() {
         const timestamp = Date.now();
         var time = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp)
         return (
-           <div>s
+           <div>
              <h1 id='title'>Servers and their current status</h1>
              <h3 className="App-title">Data last refreshed on {time} </h3>
              <table id='servers'>
@@ -86,8 +90,9 @@ export default class Table extends React.Component {
                    {this.renderTableData()}  
                 </tbody>
              </table>
-            <p></p>
-
+             <div></div>
+            <div> <button onClick={this.refreshPage}>Click to reload!</button> </div>
+            
           </div>
          
        )

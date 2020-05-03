@@ -1,16 +1,18 @@
 {
-  "name": "simple-reactjs-app",
+  "name": "SyscoDashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aditya-sridhar.github.io/simple-reactjs-app",
   "dependencies": {
     "axios": "^0.18.1",
+    "bootstrap": "^4.4.1",
     "ping": "0.2.3",
     "react": "^16.4.1",
-    "react-bootstrap": "^0.32.1",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.13.1",
+    "react-progress-button": "^5.1.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "react-tabs": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

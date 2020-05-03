@@ -1,0 +1,114 @@
+{
+"Topshelf":[
+{"id": 1, 
+ "name": "LX150TS01", 
+ "status": "Down", 
+ "region": "Central Seafood"
+ }, 
+ 
+ {"id": 2, 
+ "name": "LX289TS01", 
+ "status": "up", 
+ "region": "Incredible"
+ }, 
+ {"id": 3, 
+ "name": "LX315TS01", 
+ "status": "Up", 
+ "region": "North Carolina"
+ },
+ {"id": 4, 
+ "name": "LX450TS01", 
+ "status": "down", 
+ "region": "South Carolina"
+ }],
+ "UMS":[
+{"id": 1, 
+ "name": "UMS server1", 
+ "status": "Down", 
+ "region": "Central Seafood"
+ }, 
+ 
+ {"id": 2, 
+ "name": "UMS server2", 
+ "status": "up", 
+ "region": "Incredible"
+ }, 
+ {"id": 3, 
+ "name": "UMS server3", 
+ "status": "Up", 
+ "region": "North Carolina"
+ },
+ {"id": 4, 
+ "name": "UMS server4", 
+ "status": "down", 
+ "region": "South Carolina"
+ }],
+  "NAV":[
+{"id": 1, 
+ "name": "NAV server1", 
+ "status": "Down", 
+ "region": "Central Seafood"
+ }, 
+ 
+ {"id": 2, 
+ "name": "NAV server2", 
+ "status": "up", 
+ "region": "Incredible"
+ }, 
+ {"id": 3, 
+ "name": "NAV server3", 
+ "status": "Up", 
+ "region": "North Carolina"
+ },
+ {"id": 4, 
+ "name": "NAV server4", 
+ "status": "down", 
+ "region": "South Carolina"
+ }],
+  "FoodPro":[
+{"id": 1, 
+ "name": "FoodPro server1", 
+ "status": "Down", 
+ "region": "Central Seafood"
+ }, 
+ 
+ {"id": 2, 
+ "name": "FoodPro server2", 
+ "status": "up", 
+ "region": "Incredible"
+ }, 
+ {"id": 3, 
+ "name": "FoodPro server3", 
+ "status": "Up", 
+ "region": "North Carolina"
+ },
+ {"id": 4, 
+ "name": "FoodPro server4", 
+ "status": "down", 
+ "region": "South Carolina"
+ }],
+ "Canopy":[
+{"id": 1, 
+ "name": "Canopy server1", 
+ "status": "Down", 
+ "region": "Central Seafood"
+ }, 
+ 
+ {"id": 2, 
+ "name": "Canopy server2", 
+ "status": "up", 
+ "region": "Incredible"
+ }, 
+ {"id": 3, 
+ "name": "Canopy server3", 
+ "status": "Up", 
+ "region": "North Carolina"
+ },
+ {"id": 4, 
+ "name": "Canopy server4", 
+ "status": "down", 
+ "region": "South Carolina"
+ }]
+ 
+ 
+ }
